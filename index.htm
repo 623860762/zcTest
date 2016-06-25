@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>项目新增页面</title>
+    <link rel="stylesheet" type="text/css" href="js/easyui/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="js/easyui/themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="js/easyui/css/common.css" />
+</head>
+<body>
+<form id="projectCreation" method="post">
+  <input type="hidden" id="requesterUnitName" name="requesterUnitName">
+  <input type="hidden" id="requesterUnitManagerName" name="requesterUnitManagerName">
+  <input type="hidden" name="projectId" value="abff1dbb51514eeda849c008096873bf">
+  <table class="table_common"  align="center" width="800px">
+  	<tr height="15%">
+      <th class="table_head" colspan="4" style="text-align:center;">新增采购项目信息 <span>test</span></th>  	
+    </tr>
+    <tr >
+      <td class="table_td1">项目名称:</td><td ><input id="projectName" class="text w150" name="projectName" required="true" type="text"/><font color="red">*</font></td>
+      <td class="table_td1">项目所属年份:</td>
+      <td>
+        <select id="projectYear" class="easyui-combobox h20_w160" name="projectYear" editable="false"  panelHeight="auto"  required="true">
+          <option value="0" selected="selected">--请选择--</option>
+        	<option value="2013" >2013</option>
+          <option value="2014" >2014</option>
+					<option value="2015" >2015</option>
+  		  </select><font color="red">*</font>
+      </td>
+    </tr>
+    <tr>
+        <td class="table_td1">项目编号:</td>
+        <td><input id="projectCode" maxlength="32" class="text w150" required="true" size="22" name="projectCode"  type="text"/><font color="red">*</font></td>
+        <td class="table_td1">是否自行采购:</td>
+    	  <td>
+           	<select id="isSelf" class="easyui-combobox h20_w160" name="isSelf" editable="false"  panelHeight="auto"  required="true">
+			         <option value="Y"  >是</option>
+			   			<option value="N" selected >否</option>
+			
+			      </select><font color="red">*</font>
+        </td>
+    </tr>
+    <tr >
+    	<td class="table_td1">采购方式:</td>
+    	<td>
+          <select id="procurementMode" class="easyui-combobox h20_w160" name="procurementMode" editable="false"  panelHeight="auto"  required="true" >
+			<option value="0" selected="selected">--请选择--</option>
+			
+			<option value="XJ">询价采购</option>
+			
+			<option value="JZ">竞争性谈判采购</option>
+			
+			<option value="DY">单一来源采购</option>
+			
+          </select><font color="red">*</font>
+         
+        </td>     
+    	<td class="table_td1">委托单位名称:</td>
+        <td>
+    	<select class="easyui-combobox h20_w160" name="requesterUnitId" editable="false" id=" " panelHeight="auto">
+    	</select>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="table_td1">物资类型:</td>
+        <td class="alt">
+           	<select id="productClasses" class="easyui-combobox h20_w160" name="productClasses" editable="false"  panelHeight="auto"  required="true">
+				<option value="0" selected="selected">--请选择--</option>
+			
+			<option value="SERVER">服务</option>
+			
+			<option value="PROJECT">工程</option>
+			
+			<option value="GOODS">货物</option>
+			
+          	</select><font color="red">*</font> 
+        </td>
+        <td class="table_td1">委托单位项目经理:</td>
+        <td>
+    	<select class="easyui-combobox h20_w160" name="requesterUnitManagerId" editable="false" id="requesterUnitManagerId" panelHeight="auto">
+        </select>
+        </td>
+    </tr>
+    
+
+    <tr>
+        <td class="table_td1">开支类型:</td>
+        <td>
+    	<select id="spendingType" class="easyui-combobox h20_w160" name="spendingType" editable="false"  panelHeight="auto"  required="true">
+          	<option value="0" selected="selected">--请选择--</option>
+           
+               <option value="CBL">成本类开支</option>
+           
+               <option value="ZBL">资本类开支</option>
+           
+        </select><font color="red">*</font>
+        </td>
+         <td class="table_td1">是否公开采购:</td>
+    	<td class="alt">
+           	<select id="procurementStyle" class="easyui-combobox h20_w160"  name="procurementStyle" editable="false"  panelHeight="auto"  required="true">
+				<option value="0" selected="selected">--请选择--</option>
+			
+			<option value="N">否</option>
+			
+          	</select><font color="red">*</font> 
+        </td>
+    </tr>
+    <tr >
+        <td class="table_td1">预算总金额(元):</td><td><input id="budgetMoney" class="easyui-numberbox text w150"  name="budgetMoney" type="text" /><font color="red">*</font></td>
+         <td class="table_td1">中选规则:</td>
+         <td class="alt">
+           
+            <input type="radio" name="winRule" value="ZDJ"  checked="checked"  />  最低价法
+           
+            <input type="radio" name="winRule" value="ZHPF"  />  综合评分法
+           
+         </td>
+    </tr>
+    
+
+    
+     <tr>
+    	<td class="table_td1">需求部门:</td>
+    	<td>
+    	<select id="needDepartment" class="easyui-combobox h20_w160" name="needDepartment" editable="false"  panelHeight="auto"  required="true" >
+           <option value="0" selected="selected">--请选择--</option>
+           
+               <option value="ZSDW">直属单位</option>
+           
+               <option value="ZBBM">总部部门</option>
+           
+               <option value="ZYGS">专业公司</option>
+           
+               <option value="SGS">省公司</option>
+           
+        </select><font color="red">*</font>
+        </td>
+        <td class="table_td1">应答开始时间:</td><td><input class="easyui-datetimebox  calender_h_w"  id="startTime" name="startTime"  editable="false"  panelHeight="auto"  type="text"/><font color="red">*</font></td>
+    </tr>
+    <tr >
+    	<td class="table_td1">采购类型:</td>
+        <td>
+    	<select id="purchaseType" class="easyui-combobox h20_w160" name="purchaseType" editable="false"  panelHeight="auto"  required="true">
+           <option value="0" selected="selected">--请选择--</option>
+           
+               <option value="YJJC" >一级集采</option>
+           
+               <option value="EJJC" >二级集采</option>
+           
+               <option value="ZBCG" >总部采购</option>
+           
+               <option value="SGSZC" >省公司自采</option>
+           
+               <option value="DSGSZC" >地市公司采购</option>
+           
+        </select><font color="red">*</font>
+        </td>
+        <td class="table_td1">应答截至时间:</td><td><input class="easyui-datetimebox  calender_h_w"  id="stopTime" name="stopTime"  editable="false"  panelHeight="auto"  type="text" /><font color="red">*</font></td>
+    </tr>
+    
+    <tr>    	
+        <td class="table_td1">创建单位:</td><td class="alt"><input id="createUnit"  name="createUnit" class="text w150"  type="text" class="text w150"/><font color="red">*</font></td>
+        <td></td><td></td>
+    </tr>
+    <tr >
+        <td class="table_td1">创建部门:</td><td><input id="createDepartment" name="createDepartment"  type="text" class="text w150"/><font color="red">*</font></td>
+        <td></td><td></td>
+    </tr>
+    <tr >
+        <td class="table_td1">采购方案审批OA公文文号:</td><td><input id="oaFileNumber" name="oaFileNumber"  type="text" class="text w150"/></td>
+        <td></td><td></td>
+    </tr>
+    <tr >
+        <td class="table_td1">采购方案审批OA公文:</td><td colspan="3">&nbsp;</td>
+    </tr>
+    <tr >
+        <td class="table_td1">采购方式决策方式:</td>
+        <td>
+    	<select id="determinStyle" class="easyui-combobox h20_w160" name="determinStyle" editable="false"  panelHeight="auto"  required="true">
+           <option value="0" selected="selected">--请选择--</option>
+           
+               <option value="SPD" >采购项目审批单</option>
+           
+               <option value="WYHHY" >采购专业决策委员会会议</option>
+           
+               <option value="ZTJCH" >采购专业决策委员会会议+专题决策会</option>
+           
+               <option value="ZCBGH" >采购专业决策委员会会议+总裁办公会</option>
+           
+        </select><font color="red">*</font>
+        </td>
+        <td></td><td></td>
+    </tr>
+    
+    
+    <tr >
+        <td class="table_td1">采购方式决策人:</td><td><input id="determinMan" name="determinMan"  type="text" class="text w150"/><font color="red">*</font></td>
+        <td></td><td></td>
+    </tr>
+    <tr>
+    	<td class="table_td1">采购方式选择依据:</td><td colspan="3"><textarea name="chooseBased" id="chooseBased" style="height:30px;width:550px;" class="text w150"></textarea><font color="red">*</font></td>
+    </tr>
+     <tr>
+    	<td class="table_td1">项目描述:</td><td colspan="3"><textarea name="remarkProject" id="remarkProject" style="height:70px;width:550px;" class="text w150"></textarea></td>
+    </tr>
+    
+    <tr id="time1">  	
+        <td class="table_td1">预计发布公告时间:</td><td><input class="easyui-datebox  calender_h_w"  id="pubTime" name="pubTime"  editable="false"  panelHeight="auto"   type="text" /></td>
+        <td class="table_td1">预计标书购买截至时间:</td><td><input class="easyui-datebox  calender_h_w"   id="endBuyTime" name="endBuyTime" editable="false"  panelHeight="auto"  type="text"/></td>
+    </tr>
+    <tr id="time2">
+    	<td class="table_td1">预计截标时间:</td><td><input class="easyui-datebox  calender_h_w"  id="closeBidTime"  name="closeBidTime"  editable="false"  panelHeight="auto"     type="text"/></td>
+        <td class="table_td1">预计开始解密时间:</td><td><input class="easyui-datebox  calender_h_w"  id="startDecryptTime"  name="startDecryptTime"  editable="false"  panelHeight="auto"    type="text"/></td>
+    </tr>
+    
+    
+    <tr id="time3" >
+    	<td class="table_td1">预计开标时间:</td><td><input class="easyui-datebox  calender_h_w"  id="openBidTime" name="openBidTime"   editable="false"  panelHeight="auto"  type="text"/></td>
+        <td class="table_td1">预计定标时间:</td><td><input class="easyui-datebox  calender_h_w"  id="bidTime" name="bidTime"   editable="false"  panelHeight="auto"   type="text"/></td>
+    </tr>
+    <tr id="time4" >    
+        <td class="table_td1">决策纪要下达时间:</td><td><input class="easyui-datebox  calender_h_w" id="decisionDownTime" name="decisionDownTime"   type="text" editable="false"  panelHeight="auto" /></td>
+        <td></td><td></td>
+    </tr>
+    
+
+    <tr style="height:30px;">
+      <td colspan="4" style="text-align:center;">
+        <a href="#" class="easyui-linkbutton" onclick="project.create.onSubmit(); return false;">保存</a>
+        <a href="#" class="easyui-linkbutton" onclick="window.close(); return false;">关闭</a>
+      </td>
+    </tr>
+    
+  </table>
+</form>
+
+<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="jquery.serializeJSON.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" src="js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script src="project.js" type="text/javascript" charset="utf-8"></script>
+<script src="project.util.js" type="text/javascript" charset="utf-8"></script>
+<script src="project.create.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>
+	
